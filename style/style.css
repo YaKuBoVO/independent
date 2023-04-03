@@ -2,9 +2,96 @@
    padding: 0;
    margin: 0;
    box-sizing: border-box;
-   overflow-x: hidden;
+   /*overflow-x: hidden;*/
 }
 
 body{
    background-color: #ccc;
+}
+
+.card {
+   width: 350px;
+   height: 400px;
+   position: absolute;
+   margin-top: -200px;
+   margin-left: -200px;
+   top: 50%;
+   left: 50%;
+   transform-style: preserve-3d;
+   perspective: 600px;
+   transition: .5s;
+}
+.card .front {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   backface-visibility: hidden;
+   transform: rotateX(0deg);
+   transition: .5s;
+}
+.card:hover .front {
+   transform: rotateX(-180deg);
+}
+.card:hover .back{
+   transform: rotateX(0deg);
+}
+.back {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: #000;
+   backface-visibility: hidden;
+   transform: rotateX(180deg);
+   transition: .5s;
+}
+.back .detals {
+   position: absolute;
+   top: 50%;
+   left: 0;
+   transform: translateY(-50%);
+   width: 100%;
+   text-align: center;
+}
+.socual-icons a .bi {
+   line-height: 35px;
+}
+
+h2 {
+   font-size: 25px;
+   color: #fff;
+}
+h2 span {
+   font-size: 20px;
+}
+
+.socual-icons {
+   padding: 15px 0;
+}
+.socual-icons a {
+   display: inline-block;
+   width: 35px;
+   height: 35px;
+   border-radius: 50%;
+   background-color: #262626;
+   color: #fff;
+   text-align: center;
+   text-decoration: none;
+   transition: .5s;
+}
+.socual-icons a:hover {
+   background-color: rgb(247, 115, 115);
+}
+
+.back::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 50%;
+   width: 100%;
+   height: 100%;
+   background-color: #00000000;
 }
